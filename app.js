@@ -13,6 +13,12 @@ db.authenticate()
 
 const app = express();
 
+//Handlebars
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+app.use(express.static(path.join(__dirname, 'Public')));
+
 app.get('/', (req, res) => res.send('INDEX'));
 
 app.use('/gigs', require('./routes/gigs'));
