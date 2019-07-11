@@ -17,6 +17,9 @@ const app = express();
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+//Body Parser
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(express.static(path.join(__dirname, 'Public')));
 
 app.get('/', (req, res) => res.render('index', { layout: 'landing' }));
