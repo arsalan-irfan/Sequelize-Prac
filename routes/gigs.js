@@ -16,6 +16,10 @@ router.get('/', (req, res) => {
     });
 });
 
+//Display Add gig form
+router.get('/add', (req, res) => res.render('add'));
+
+//Add gig
 router.get('/add', (req, res) => {
   const data = {
     title: 'Simple Wordpress developer',
